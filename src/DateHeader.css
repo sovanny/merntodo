@@ -1,0 +1,34 @@
+.header {
+    /* background: rgb(138, 138, 138); */
+    height: 20%;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 1em;
+}
+
+.date {
+    display: flex;
+}
+
+.day {
+    font-size: 3rem;
+    text-align: right;
+    line-height: 2.7rem;
+}
+
+.month-year-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 2px;
+}
+
+.year {
+    color: #BFBFBF;
+}
+.weekday {
+    color: #6F6A6A;
+}
+

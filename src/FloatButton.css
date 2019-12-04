@@ -1,0 +1,39 @@
+.float-btn {
+    position: relative;
+    background: #02D47E;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    top: -35px;
+    cursor: pointer;
+}
+
+.float-btn:hover {
+    transition: background-color 0.25s;
+    background-color: #00b56b;
+}
+.float-btn:active {
+    transition: background-color 0.25s;
+    background-color: #44cf98;
+}
+
+.float-btn:before, .float-btn:after {
+    content: " ";
+    position: absolute;
+    background: #0D8451;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    margin-left: -2px;
+    height: 14px;
+    margin-top: -7px;
+}
+
+.float-btn:before {
+    transform: rotate(90deg);
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+

@@ -1,0 +1,83 @@
+.todolist {
+    margin-top: 1em;
+}
+
+.todo-item {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    align-items: center;
+    margin: 1.4em 0;
+}
+
+.todo-text {
+    grid-column: 1;
+    font-size: 1.6rem;
+}
+
+.todo-text:focus {
+    outline: none;
+    color: #6F6A6A;
+} 
+
+.todo-text:empty:before {
+    content: attr(data-placeholder);
+    color: #BFBFBF;
+}
+/* 
+input, select, input:focus {
+    color: #767171;
+    font-weight: 500;
+    border: none;
+    outline: none;
+} */
+
+.delete-btn {
+    position: relative;
+    grid-column: 2;
+    justify-self: end;
+    box-sizing: content-box;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #C10000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.delete-btn:before, .delete-btn:after {
+    content: ' ';
+    position: absolute;
+    background: #C10000;
+    border: solid 1px #C10000;
+    border-radius: 25%;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px; /* varför ej 0.05em ?*/
+    height: 12px;
+    margin-top: -6px;
+    transform: rotate(-45deg);
+}
+
+.delete-btn:before {
+    transform: rotate(45deg);   
+}
+
+.delete-btn:hover:before {
+    transform: rotate(45deg) scale(1.2, 1.2);
+    transition: transform linear 0.1s;
+}
+.delete-btn:hover:after {
+    transform: rotate(-45deg) scale(1.2, 1.2);
+    transition: transform linear 0.1s;
+}
+
+.delete-btn:active:before {
+    transform: rotate(45deg) scaleX(1.2);
+    transition: transform linear 0.1s;
+}
+.delete-btn:active:after {
+    transform: rotate(-45deg) scaleX(1.2);
+    transition: transform linear 0.1s;
+}

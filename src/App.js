@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import FloatButton from './FloatButton';
+import DateHeader from './DateHeader';
+import TodoList from './TodoList';
 
 function App() {
+
+  const [ addNewTodo, setAddNewTodo ] = useState(false);
+
+  function handleAddNewTodo() {
+    console.log("click!")
+    setAddNewTodo(true);
+  }
+
+  function addedTodo() {
+      setAddNewTodo(false);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="container">
+        <DateHeader/>
+        <TodoList addNewTodo={ addNewTodo } addedTodo={ addedTodo } />
+      </div>
+      <FloatButton handleClick={ handleAddNewTodo }/>
     </div>
   );
 }
