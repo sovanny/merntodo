@@ -6,10 +6,12 @@
     display: grid;
     grid-template-columns: 85% 15%;
     align-items: center;
-    margin: 1.4em 0;
+    margin-bottom: 1.4em;
 }
 
 .todo-text {
+    height: var(--programmedheight);
+    overflow: hidden;
     grid-column: 1;
     font-size: 1.6rem;
 }
@@ -23,19 +25,12 @@
     content: attr(data-placeholder);
     color: #BFBFBF;
 }
-/* 
-input, select, input:focus {
-    color: #767171;
-    font-weight: 500;
-    border: none;
-    outline: none;
-} */
 
 .delete-btn {
+    overflow: hidden;
     position: relative;
     grid-column: 2;
     justify-self: end;
-    box-sizing: content-box;
     width: 2em;
     height: 2em;
     border: 2px solid #C10000;
@@ -80,4 +75,26 @@ input, select, input:focus {
 .delete-btn:active:after {
     transform: rotate(-45deg) scaleX(1.2);
     transition: transform linear 0.1s;
+}
+
+
+.fading {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.removing {
+    display: none;
+}
+
+.collapsing-margin {
+    margin: 0;
+    transition: margin 0.3s;
+}
+
+.collapsing {
+    margin: 0;
+    height: 0;
+    border-width: 0px;
+    transition: margin 0.3s, height 0.3s, border-width 0.3s;
 }
