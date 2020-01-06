@@ -10,7 +10,6 @@
 }
 
 .todo-text {
-    height: var(--programmedheight);
     overflow: hidden;
     grid-column: 1;
     font-size: 1.6rem;

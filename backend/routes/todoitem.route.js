@@ -7,7 +7,7 @@ let router = express.Router();
 
 //Get all todos
 router.route('/').get((req, res, next) => {
-    TodoItem.find( (err, docs) => {
+    TodoItem.find( {}, null, {sort: '-date'}, (err, docs) => {
         if (err) return next(err);
         else {
             console.log('found:');

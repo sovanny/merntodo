@@ -6,24 +6,21 @@ import TodoList from './TodoList';
 
 function App() {
 
-  const [ addNewTodo, setAddNewTodo ] = useState(false);
+  const [ addNewTodo, setAddNewTodo ] = useState(0);
 
   function handleAddNewTodo() {
-    console.log("click!")
-    setAddNewTodo(true);
-  }
-
-  function addedTodo() {
-      setAddNewTodo(false);
+    console.log("click!");
+    setAddNewTodo(addNewTodo + 1);
   }
 
   return (
     <div className="app">
       <div className="container">
         <DateHeader/>
-        <TodoList addNewTodo={ addNewTodo } addedTodo={ addedTodo } />
+        <TodoList addNewTodo={ addNewTodo } />
       </div>
-      <FloatButton handleClick={ handleAddNewTodo }/>
+        <FloatButton handleClick={ handleAddNewTodo }/>
+      
     </div>
   );
 }
